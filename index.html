@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CS 180: Project 1</title>
+    <title>CS 180: Project 2</title>
     <style>
       /* cspell:disable-file */
       /* webkit printing magic: print all background colors */
@@ -28,7 +28,7 @@
 
       body {
         line-height: 1.5;
-        white-space: normal;
+        white-space: pre-wrap;
       }
 
       a,
@@ -58,7 +58,7 @@
         margin-bottom: 0.75em;
       }
 
-      /* h1 {
+      h1 {
         font-size: 1.875rem;
         margin-top: 1.875rem;
       }
@@ -71,7 +71,7 @@
       h3 {
         font-size: 1.25rem;
         margin-top: 1.25rem;
-      } */
+      }
 
       .source {
         border: 1px solid #ddd;
@@ -114,22 +114,8 @@
         border-bottom: 1px solid rgba(55, 53, 47, 0.09);
       }
 
-      /* img {
-        max-width: 100%;
-      } */
-      h1,
-      h2,
-      h3 {
-        margin-top: 0.2em;
-        margin-bottom: 0.2em;
-      }
-
       img {
         max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 1em auto;
-        margin-bottom: 2em;
       }
 
       @media only print {
@@ -147,23 +133,13 @@
         font-size: 0.875rem;
       }
 
-      /* .column-list {
+      .column-list {
         display: flex;
         justify-content: space-between;
       }
 
       .column {
         padding: 0 1em;
-      } */
-      .column-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        margin-bottom: 1em;
-      }
-      .column {
-        flex: 1;
-        min-width: 300px;
       }
 
       .column:first-child {
@@ -384,6 +360,7 @@
       }
 
       .page-header-icon-with-cover {
+        margin-top: -0.72em;
         margin-left: 0.07em;
       }
 
@@ -415,12 +392,7 @@
 
       p {
         margin-top: 0.5em;
-        margin-bottom: 0.5e;
-      }
-
-      .paragraph {
-        margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 0.5em;
       }
 
       .image {
@@ -483,14 +455,6 @@
         text-overflow: ellipsis;
         height: 1.75em;
         white-space: nowrap;
-      }
-
-      p + img,
-      p + .column-list,
-      p + h2,
-      p + h3 {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
       }
 
       .bookmark-text {
@@ -820,195 +784,223 @@
       .checkbox-off {
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
       }
-      .media-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 2em;
-      }
-      .media-item {
-        text-align: center;
-      }
-      .media-item img {
-        max-width: 100%;
-        height: auto;
-      }
     </style>
   </head>
   <body>
-    <article id="ff982d5c-2318-493e-8b42-1b6efc2678d4" class="page sans">
+    <article id="10ea1f2d-c1d2-8003-96be-c3def229c8bb" class="page sans">
       <header>
-        <h1 class="page-title">CS 180: Project 1</h1>
+        <h1 class="page-title">CS 180: Project 2</h1>
+        <p class="page-description"></p>
       </header>
-      <div>
-        <p>
-          For a small image, I was initially performing exhaustive search under
-          a fixed window, but was not getting the results I wanted. Upon
-          inspection, I quickly realized, that the borders were adding
-          unnecessary noise in the scoring function (L2 Norm / NCC). To combat
-          this I reduced the border area for comparison, focusing on the central
-          part of the image.
+      <div class="page-body">
+        <p id="10ea1f2d-c1d2-8097-b459-e21dac6b1e5e" class=""></p>
+        <p id="10ea1f2d-c1d2-80f5-a34b-fc50ba801aa4" class=""></p>
+        <p id="10ea1f2d-c1d2-8099-a60a-d6122db47ad3" class="">
+          We started with Gaussian blurring for noise reduction, followed by
+          gradient-based edge detection in both horizontal and vertical
+          directions. We then computed gradient magnitude to highlight areas of
+          intensity change, applying thresholding to create a binary edge map,
+          and incorporating an adaptive sharpening method to enhance image
+          details. Also, we explore advanced edge detection using Difference of
+          Gaussian filters.
         </p>
-
-        <p>
-          When I had a fixed window, I noticed it performed well with the
-          cathedral image but poorly with the monastery image which led to my
-          next choice of defining a search window based on a percentage of the
-          image dimensions, allowing the function to adapt to different image
-          sizes while limiting the search space for efficiency.
+        <figure id="10ea1f2d-c1d2-80fe-82a1-cdd59b735ba2" class="image">
+          <a
+            href="./media/camera_man_all_images.jpg.png"
+            ><img
+              style="width: 708px"
+              src="./media/camera_man_all_images.jpg.png"
+          /></a>
+        </figure>
+        <figure id="10ea1f2d-c1d2-8007-a8b3-c45c08bb1f38" class="image">
+          <a
+            href="./media/dog_y_filter.jpg.png"
+            ><img
+              style="width: 240px"
+              src="./media/dog_y_filter.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-809f-8eec-ec3bab810318" class=""></p>
+        <p id="10ea1f2d-c1d2-80e5-a9a8-d80ed85963fc" class=""></p>
+        <p id="10ea1f2d-c1d2-80e2-b484-d79650c92195" class="">
+          We implemented an image sharpening technique using adaptive Gaussian
+          filtering. This takes an input image and applies a sharpening effect
+          by subtracting a blurred version of the image from the original, then
+          adding this high-frequency information back to the original with
+          adjustable strength. It uses an adaptive Gaussian kernel for blurring,
+          which allows for edge-preserving smoothing.
         </p>
-
-        <p>
-          Furthermore, when exploring L2 Norm and NCC, I was doing more research
-          and came across Canny Edge Detection which allowed me to progress
-          significantly as it helps focus the alignment on strong features and
-          makes it more robust to intensity variations rather than getting lost
-          in useless features.
-        </p>
-
-        <p>
-          Here are two examples of the small jpg images after being aligned.
-        </p>
-
-        <div class="column-list">
-          <div class="column">
-            <img src="./media/monastery_shifted.jpg" alt="Monastery Shifted" />
+        <p id="10ea1f2d-c1d2-80b2-883e-d2654c1040de" class=""></p>
+        <figure id="10ea1f2d-c1d2-803e-bc2c-ee5e3c4f8411" class="image">
+          <a
+            href="./media/banksy_sharpened.jpg.png"
+            ><img
+              style="width: 2390px"
+              src="./media/banksy_sharpened.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-8064-9e72-d266bc8700e4" class=""></p>
+        <p id="10ea1f2d-c1d2-80be-8a93-ca88d3a54c72" class=""></p>
+        <figure id="10ea1f2d-c1d2-80db-9330-c1cc2d4f7466" class="image">
+          <a
+            href="./media/joker_sharpened.jpg.png"
+            ><img
+              style="width: 2117px"
+              src="./media/joker_sharpened.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80ed-8bfd-e17eb0a951f2" class=""></p>
+        <p id="10ea1f2d-c1d2-80fb-b291-fa9682f2ee2a" class=""></p>
+        <p id="10ea1f2d-c1d2-8008-9d97-fb9005396be5" class=""></p>
+        <div id="10ea1f2d-c1d2-8088-8135-c2fe29ab491c" class="column-list">
+          <div
+            id="10ea1f2d-c1d2-805d-b6ca-f8b69dc21e1e"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="10ea1f2d-c1d2-80a8-b18f-cc80b05784bd" class="image">
+              <a
+                href="./media/derek_low_pass.jpg.png"
+                ><img
+                  style="width: 205.328125px"
+                  src="./media/derek_low_pass.jpg.png"
+              /></a>
+            </figure>
           </div>
-          <div class="column">
-            <img src="./media/cathedral_shifted.jpg" alt="Cathedral Shifted" />
+          <div
+            id="10ea1f2d-c1d2-808d-8ce7-c74443c40a97"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="10ea1f2d-c1d2-8022-a04e-d221b5ddaa9d" class="image">
+              <a
+                href="./media/nutmeg_high_pass.png"
+                ><img
+                  style="width: 205.328125px"
+                  src="./media/nutmeg_high_pass.png"
+              /></a>
+            </figure>
+          </div>
+          <div
+            id="10ea1f2d-c1d2-80c3-acbb-cc17fdf2b642"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="10ea1f2d-c1d2-80a7-8c43-f8d8e91e301d" class="image">
+              <a
+                href="./media/derek_nutmeg_hybrid.jpg.png"
+                ><img
+                  style="width: 227.1219512195122px"
+                  src="./media/derek_nutmeg_hybrid.jpg.png"
+              /></a>
+            </figure>
           </div>
         </div>
-
-        <p>
-          However, when I was performing pyramid alignment, at my lowest level I
-          have a window range that is half the size of the image dimension so I
-          have a broader search. For the layers above that, I have a fixed
-          window range of 10 pixels.
+        <p id="10ea1f2d-c1d2-800f-9a5d-c14eea2fa784" class=""></p>
+        <p id="10ea1f2d-c1d2-8076-82dc-f469aa3cfcca" class="">
+          I made a hybrid image of two images using frequency-based image
+          processing techniques. We take two input images and apply different
+          filters to each: a low-pass filter (Gaussian blur) to the first image
+          and a high-pass filter to the second image. These filtered images are
+          then merged to create a hybrid result that appears to change based on
+          viewing distance. The function also resizes images if necessary, and
+          provides visualizations of the process, including frequency spectrum
+          analyses using Fourier transforms as shown below. Ideally, the images
+          would&#x27;ve been aligned manually but I used the starter code to do
+          it.
         </p>
-
-        <p>
-          For the bigger images, I wasn't fully happy with the quality so I
-          tried to enhance it by applying post processing techniques on the
-          image:
+        <p id="10ea1f2d-c1d2-80fb-8af7-f0f8450c1229" class=""></p>
+        <figure id="10ea1f2d-c1d2-8040-b643-cbe007c96343" class="image">
+          <a
+            href="./media/spectrum_images.jpg.png"
+            ><img
+              style="width: 708px"
+              src="./media/spectrum_images.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-809b-84a8-dcc8b512e524" class=""></p>
+        <p id="10ea1f2d-c1d2-802b-b240-fcc0e85b1916" class="">
+          To create the Gaussian and Laplacian pyramids I wrote a function which
+          takes an input image and generates two stacks of images: a Gaussian
+          stack (progressively blurred versions of the original image) and a
+          Laplacian stack (difference images between adjacent Gaussian levels).
+          It uses helper functions to create Gaussian kernels and apply Gaussian
+          filtering.
         </p>
-
-        <p>
-          I wrote a function which implements a Gaussian filter with edge
-          preservation capabilities, effectively reducing noise and color
-          artifacts while maintaining crucial edge information. I addressed
-          border anomalies by employing median filtering within a specified
-          border region. Finally, I integrated a function that utilizes
-          percentile based intensity rescaling for each color channel
-          independently. This technique normalizes the color distribution.
+        <p id="10ea1f2d-c1d2-8054-833c-fd32356d38a9" class=""></p>
+        <figure id="10ea1f2d-c1d2-80ba-8965-e50493a9d8ac" class="image">
+          <a
+            href="./media/orange_gaussian.jpg.png"
+            ><img
+              style="width: 2376px"
+              src="./media/orange_gaussian.jpg.png"
+          /></a>
+        </figure>
+        <figure id="10ea1f2d-c1d2-80c6-a2d3-e00be830c987" class="image">
+          <a
+            href="./media/orange_laplacian.jpg.png"
+            ><img
+              style="width: 2376px"
+              src="./media/orange_laplacian.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80e5-acd3-eea14887e506" class=""></p>
+        <p id="10ea1f2d-c1d2-805d-a2c6-edf5c55c94c1" class=""></p>
+        <figure id="10ea1f2d-c1d2-80cd-9789-d9501c8c695b" class="image">
+          <a
+            href="./media/orange_gaussian.jpg%201.png"
+            ><img
+              style="width: 2376px"
+              src="./media/orange_gaussian.jpg%201.png"
+          /></a>
+        </figure>
+        <figure id="10ea1f2d-c1d2-800c-aabe-c5a52691d8af" class="image">
+          <a
+            href="./media/orange_laplacian.jpg%201.png"
+            ><img
+              style="width: 2376px"
+              src="./media/orange_laplacian.jpg%201.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80af-9887-c981300eaefc" class=""></p>
+        <p id="10ea1f2d-c1d2-80cd-b5be-d96da8b27ba2" class=""></p>
+        <figure id="10ea1f2d-c1d2-802a-9211-e02a57dc3bef" class="image">
+          <a
+            href=./media/mosque.jpg.png"
+            ><img
+              style="width: 912px"
+              src="./media/mosque.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80c5-af17-cf4a985633f9" class=""></p>
+        <figure id="10ea1f2d-c1d2-80a4-a984-e4fcc2cbdf47" class="image">
+          <a
+            href="./media/mosque-laplacian.jpg.png"
+            ><img
+              style="width: 912px"
+              src="./media/mosque-laplacian.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80ef-ba46-d0de52a1103c" class=""></p>
+        <p id="10ea1f2d-c1d2-803c-bac4-f60878ce9cc6" class="">
+          Orange and Apple blend. We did this by creating a diagonal mask,
+          merging Laplacian stacks of two images, and reconstructing an image
+          from its Laplacian pyramid. The main function takes two input images
+          and a mask, decomposes them into Laplacian pyramids, blends these
+          pyramids using the mask, and then reconstructs the final blended
+          image. This method allows for seamless blending of images.
         </p>
-
-        <p>Here is how my emir.tif file looks after alignment.</p>
-
-        <img src="./media/emir_cropped.png" alt="Emir Cropped" />
-
-        <h2>Bells and Whistles:</h2>
-
-        <p>
-          To try and figure out auto cropping, initially I noticed that it was
-          the borders that were messing the pictures up and there were lines and
-          streaks of colors which were causing issues with the image. Then I
-          started by applying Canny edge detection to highlight the significant
-          features of the image, such as the architectural details of a church
-          and its reflection in water. Initially, this edge detected image
-          included unwanted artifacts along the borders. To address this, I
-          experimented with various methods to identify and crop out these
-          artifacts while preserving the core content. My approach evolved from
-          simple border detection to a more sophisticated center-out method.
-          This final technique begins by focusing on the central 60% of the
-          image and then expands outward in each direction until it encounters
-          significant edge content. I found this method effective in identifying
-          the "inner rectangle" of relevant image data, allowing me to crop out
-          extra border noise. The result is a cleaner, more focused edge
-          detected image that emphasizes the main subject without distracting
-          border artifacts, providing a solid foundation for further image
-          analysis or processing tasks.
-        </p>
-
-        <p>
-          Here is the Canny Edge Detection of the image before and after
-          cropping:
-        </p>
-
-        <div class="column-list">
-          <div class="column">
-            <h3>Before Cropping:</h3>
-            <img src="./media/church_canny.png" alt="Church Canny Before" />
-          </div>
-          <div class="column">
-            <h3>After Cropping:</h3>
-            <img src="./media/church_canny_crop.png" alt="Church Canny After" />
-          </div>
-        </div>
-
-        <p>Here is the image before and after cropping:</p>
-
-        <div class="column-list">
-          <div class="column">
-            <h3>Before:</h3>
-            <img src="./media/church_precrop.png" alt="Church Precrop" />
-          </div>
-          <div class="column">
-            <h3>After:</h3>
-            <img src="./media/church_postcrop.png" alt="Church Postcrop" />
-          </div>
-        </div>
-
-        <h2>All Images Auto Cropped</h2>
-        <div class="media-grid">
-          <div class="media-item">
-            <img src="./media/church_2.jpg" alt="Church Cropped" />
-            <p>Church G: (4, 25) R: (-4, 58)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/emir_2.jpg" alt="Emir Cropped" />
-            <p>Emir G: (23, 49) R: (40, 107)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/harvesters_2.jpg" alt="Harvesters Cropped" />
-            <p>Harvesters G: (18, 60) R: (9, 123)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/icon_2.jpg" alt="Icon Cropped" />
-            <p>Icon G: (16, 38) R: (22, 88)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/lady_2.jpg" alt="Lady Cropped" />
-            <p>Lady G: (10, 56) R: (13, 120)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/melons_2.jpg" alt="Melons Cropped" />
-            <p>Melons G: (9, 79) R: (11, 182)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/onion_church_2.jpg" alt="Onion Church Cropped" />
-            <p>Onion Church G: (24, 52) R: (34, 107)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/sculpture_2.jpg" alt="Sculpture Cropped" />
-            <p>Sculpture G: (-11, 33) R: (-27, 140)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/sculpture_2.jpg" alt="Sculpture Cropped" />
-            <p>Self Portrait G: (29, 77) R: (37, 175)</p>
-          </div>
-          <div class="media-item">
-            <img
-              src="./media/three_generations_2.jpg"
-              alt="Three Generations Cropped"
-            />
-            <p>Three Generations G: (12, 56) R: (8, 111)</p>
-          </div>
-          <div class="media-item">
-            <img src="./media/train_2.jpg" alt="Train Cropped" />
-            <p>Train G: (8, 40) R: (28, 84)</p>
-          </div>
-        </div>
+        <figure id="10ea1f2d-c1d2-80fd-83ee-d1e8d2901452" class="image">
+          <a
+            href="./media/orange_apple.jpg.png"
+            ><img
+              style="width: 708px"
+              src="./media/orange_apple.jpg.png"
+          /></a>
+        </figure>
+        <p id="10ea1f2d-c1d2-80c3-aa51-ed604ca4d697" class=""></p>
       </div>
     </article>
+    <span class="sans" style="font-size: 14px; padding-top: 2em"></span>
   </body>
 </html>

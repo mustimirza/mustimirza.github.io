@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CS 180: Project 3</title>
+    <title>CS 180: Project 4</title>
     <style>
       /* cspell:disable-file */
       /* webkit printing magic: print all background colors */
@@ -55,7 +55,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         margin-top: 0;
-        margin-bottom: 0.75em;
+        margin-bottom: 0.25em;
       }
 
       h1 {
@@ -86,8 +86,16 @@
       }
 
       figure {
-        margin: 1.25em 0;
+        margin: 0.5em 0;
         page-break-inside: avoid;
+      }
+
+      p + figure {
+        margin-top: 0.25em;
+      }
+
+      figure + p {
+        margin-top: 0.25em;
       }
 
       figcaption {
@@ -116,6 +124,21 @@
 
       img {
         max-width: 100%;
+        margin-bottom: 0;
+      }
+
+      figure {
+        margin: 0.5em 0;
+        page-break-inside: avoid;
+      }
+
+      p {
+        margin: 0.5em 0;
+      }
+
+      p + figure,
+      figure + p {
+        margin-top: 0.25em;
       }
 
       @media only print {
@@ -138,8 +161,18 @@
         justify-content: space-between;
       }
 
+      .column-list figure {
+        margin: 0;
+      }
+
+      .column-list img {
+        max-width: 100%;
+        height: auto;
+      }
+
       .column {
-        padding: 0 1em;
+        flex: 1;
+        max-width: 100%;
       }
 
       .column:first-child {
@@ -391,8 +424,8 @@
       }
 
       p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-top: 0px;
+        margin-bottom: 0px;
       }
 
       .image {
@@ -787,108 +820,119 @@
     </style>
   </head>
   <body>
-    <article id="11aa1f2d-c1d2-8087-b925-f8bc3386cf23" class="page sans">
+    <article id="125a1f2d-c1d2-800e-b1f7-eae41aa31dc9" class="page sans">
       <header>
-        <h1 class="page-title">CS 180: Project 3</h1>
+        <h1 class="page-title">CS 180: Project 4</h1>
         <p class="page-description"></p>
       </header>
       <div class="page-body">
-        <p id="11aa1f2d-c1d2-80a4-8a31-fc910ce4f637" class=""></p>
-        <h3 id="11aa1f2d-c1d2-8085-8cda-ff78d917e2cf" class="">Part 1:</h3>
-        <p id="11aa1f2d-c1d2-806d-bc44-e3a33cbe46c5" class="">
-          So the first thing we did is use the tool given to us to generate
-          correspondences based on our two images of choice.
+        <p id="125a1f2d-c1d2-80a6-b44b-ff8ee21d119f" class=""></p>
+        <p id="125a1f2d-c1d2-8014-80f9-d1c95d11c985" class="">Task 1:</p>
+        <p id="125a1f2d-c1d2-800c-b7b1-f4eea10e332d" class="">
+          These are some of the images I took
         </p>
-        <figure id="11aa1f2d-c1d2-80e8-8546-fc36578de3c2" class="image">
-          <a href="./media/triangulation.png"
-            ><img style="width: 708px" src="./media/triangulation.png"
+        <div id="125a1f2d-c1d2-80d1-afde-e4429ae29df7" class="column-list">
+          <div
+            id="125a1f2d-c1d2-80eb-a999-df1c5926e1cf"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="125a1f2d-c1d2-80c4-8a19-c0d622386745" class="image">
+              <a href="./media/dana_left_scaled.jpg"
+                ><img style="width: 1071px" src="./media/dana_left_scaled.jpg"
+              /></a>
+            </figure>
+          </div>
+          <div
+            id="125a1f2d-c1d2-80f3-a9aa-fd64031daf50"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="125a1f2d-c1d2-80a8-b464-ca9399a7c02e" class="image">
+              <a href="./media/dana_right_scaled.jpg"
+                ><img style="width: 1071px" src="./media/dana_right_scaled.jpg"
+              /></a>
+            </figure>
+          </div>
+          <div
+            id="125a1f2d-c1d2-80ca-b76a-c411953c1a97"
+            style="width: 100%"
+            class="column"
+          >
+            <figure id="125a1f2d-c1d2-80e0-a5df-fb8b8f86201a" class="image">
+              <a href="./media/mv_store_left_scaled.jpg"
+                ><img
+                  style="width: 1071px"
+                  src="./media/mv_store_left_scaled.jpg"
+              /></a>
+            </figure>
+          </div>
+        </div>
+        <p id="125a1f2d-c1d2-80f8-bd46-c72a71175a85" class="">Task 2:</p>
+        <p id="125a1f2d-c1d2-8017-9820-edfcf840479b" class="">
+          In this project, I implemented several functions to calculate and
+          apply homographies for image warping. The process began with
+          calculating the homography matrix using corresponding point pairs from
+          source and target images. I set up a system of linear equations and
+          solved it using least squares to find the homography parameters. To
+          transform points using the homography, I applied the matrix
+          multiplication and normalized the results. I also created functions to
+          assess the accuracy of the homography by calculating the error between
+          transformed source points and target points. For image warping, I
+          implemented both forward and inverse warping methods. The inverse
+          warping approach proved more effective, as it avoided holes in the
+          output image. This method involved mapping coordinates from the output
+          space back to the input image and using bilinear interpolation to
+          determine pixel values.
+        </p>
+        <p id="125a1f2d-c1d2-804f-b0e2-db87eb39f223" class=""></p>
+        <p id="125a1f2d-c1d2-803a-be23-fda2148c3e7c" class="">Task 3:</p>
+        <p id="125a1f2d-c1d2-80ef-ac80-f293f7b28dae" class="">
+          To rectify the images, I marked key points on the images which are in
+          blue here.
+        </p>
+        <p id="125a1f2d-c1d2-80e7-8114-c1f89f183722" class=""></p>
+        <figure id="125a1f2d-c1d2-80e9-be8e-f8b13ac130fd" class="image">
+          <a href="./media/food_truck_comparison.png"
+            ><img style="width: 708px" src="./media/food_truck_comparison.png"
           /></a>
         </figure>
-        <p id="11aa1f2d-c1d2-8035-843f-e5968a3a1324" class=""></p>
-        <h3 id="11aa1f2d-c1d2-808f-afe1-c5899e8f2b83" class="">Part 2:</h3>
-        <p id="11aa1f2d-c1d2-8058-85a0-d771ea87d21d" class="">
-          I used a facial image warping technique to create a midway face
-          between two input images. I implemented affine transformations and
-          Delaunay triangulation to map corresponding facial features. My
-          process involved computing affine matrices for triangle-to-triangle
-          mappings, applying these transformations to warp image regions, and
-          blending the warped triangles from both source and target images. I
-          noticed that because of the differences in facial structure and more
-          specifically the Adam’s apple. The midway image came out a little
-          weird. I had to do extra triangulation than I initially started with
-          because the results I was getting weren’t ideal.
-        </p>
-        <p id="11aa1f2d-c1d2-80bc-8099-f7ced88bef0e" class=""></p>
-        <figure id="11aa1f2d-c1d2-8090-a840-eb3fd1e7d532" class="image">
-          <a href="./media/midway_face.png"
-            ><img style="width: 708px" src="./media/midway_face.png"
+        <p id="125a1f2d-c1d2-80c7-ad6e-dd7aa56be1ad" class=""></p>
+        <figure id="125a1f2d-c1d2-800b-9556-e6bcea6aed99" class="image">
+          <a href="./media/phone_screen_comparison.png"
+            ><img
+              style="width: 708px"
+              src="./media/phone_screen_comparison.png"
           /></a>
         </figure>
-        <p id="11aa1f2d-c1d2-8074-a89b-f69e71c75097" class=""></p>
-        <h3 id="11aa1f2d-c1d2-80a7-a3f8-fe7d19ffb54d" class="">Part 3:</h3>
-        <p id="11aa1f2d-c1d2-8098-a72e-e30eb965b8a1" class="">
-          I implemented a morphing function to create a smooth transition
-          between two facial images. My approach used a combination of warping
-          and dissolving techniques. After that, I computed intermediate points
-          between corresponding features of the two images based on a warping
-          fraction. Then, I apply affine transformations to triangular regions
-          of both images to align them with these intermediate points. To create
-          a morphing sequence, I generated multiple frames by varying the warp
-          and dissolve fractions from 0 to 1.
+        <p id="125a1f2d-c1d2-8047-bb27-c5838220e47c" class=""></p>
+        <p id="125a1f2d-c1d2-80f1-b536-f5be0f878749" class="">
+          Task 4:<br /><br />
         </p>
-        <p id="11aa1f2d-c1d2-804a-a0a8-de7016f9d4f4" class=""></p>
-        <p id="11aa1f2d-c1d2-80bb-a1bf-d86c8a6f098e" class="">
-          Here is the GIF:
+        <p id="125a1f2d-c1d2-80d7-bd4c-f4707b07880c" class="">
+          To create mosaic images, I implemented a multi-step process that
+          combines homography transformation with image blending techniques.
+          First, I resized the input images and adjusted the point coordinates
+          accordingly. Then, I computed the homography matrix using
+          corresponding points from both images and applied an inverse
+          homography to warp one image. I determined the size of the output
+          image based on the dimensions of both the warped and the second image.
+          To seamlessly blend the images, I created a mask and used a pyramid
+          blending technique. This involved constructing Gaussian and Laplacian
+          pyramids for both images and the mask, then blending the images at
+          each level of the pyramid. Finally, I reconstructed the blended image
+          from the pyramid, ensuring smooth transitions between the two original
+          images.
         </p>
-        <figure id="11aa1f2d-c1d2-80bc-a671-e45061618f6e" class="image">
-          <a href="./media/morph_sequence.gif"
-            ><img style="width: 512px" src="./media/morph_sequence.gif"
+        <p id="125a1f2d-c1d2-805a-8548-c0213057a665" class=""></p>
+        <figure id="125a1f2d-c1d2-8031-b0a6-e7ca0ee602b6" class="image">
+          <a href="./media/dana_mosaic_process.png"
+            ><img style="width: 708px" src="./media/dana_mosaic_process.png"
           /></a>
         </figure>
-        <p id="11aa1f2d-c1d2-80ab-8d9f-d6be7f893361" class=""></p>
-        <h3 id="11aa1f2d-c1d2-801d-a853-decb2f279c04" class="">Part 4:</h3>
-        <p id="11aa1f2d-c1d2-80ca-8b22-ea7ddabfe8bc" class="">
-          I used Brazilian image data from the public sources available to us.
-          They all used this format of getting the data annotated.<br /><br />
-        </p>
-        <figure id="11aa1f2d-c1d2-8083-b802-c64e2ad8a01e" class="image">
-          <a href="./media/landmark_46points.jpg"
-            ><img style="width: 550px" src="./media/landmark_46points.jpg"
-          /></a>
-        </figure>
-        <p id="11aa1f2d-c1d2-80b4-96e0-ee1ffa301357" class=""></p>
-        <p id="11aa1f2d-c1d2-8062-9938-fe78e3b55c6a" class="">
-          The implementation for this was pretty straightforward and I just
-          followed the spec.
-        </p>
-        <figure id="11aa1f2d-c1d2-80c0-b6e8-ff1d37ac292c" class="image">
-          <a href="./media/face_morphing.png"
-            ><img style="width: 708px" src="./media/face_morphing.png"
-          /></a>
-        </figure>
-        <p id="11aa1f2d-c1d2-8011-9780-ccc445b6cb5e" class=""></p>
-        <h3 id="11aa1f2d-c1d2-8018-80a6-c9499e5b43ca" class="">Part 5:</h3>
-        <p id="11aa1f2d-c1d2-80e5-b070-e7f8b21f56ec" class="">
-          To create a caricature it was a pretty similar process just adjusting
-          the value of our target points, here is my caricature with alpha value
-          2.
-        </p>
-        <figure id="11aa1f2d-c1d2-80cb-b41e-d0c2a5737602" class="image">
-          <a href="./media/caricature_alpha_2.png"
-            ><img style="width: 708px" src="./media/caricature_alpha_2.png"
-          /></a>
-        </figure>
-        <p id="11aa1f2d-c1d2-8076-b0bf-ce754bf0bd7e" class=""></p>
-        <p id="11aa1f2d-c1d2-8019-ae05-f8c16fe04067" class="">
-          Bells and Whistles:
-        </p>
-        <p id="11aa1f2d-c1d2-8012-a6dc-dd71ab0fa0cd" class="">
-          I tried morphing my face with the average black face but that
-          didn&#x27;t work too well.
-        </p>
-        <figure id="11aa1f2d-c1d2-80de-8b2b-f14d608ebf18" class="image">
-          <a href="./media/morphing_comparison.png"
-            ><img style="width: 3872px" src="./media/morphing_comparison.png"
+        <figure id="125a1f2d-c1d2-80b0-900e-f1bb7da07f81" class="image">
+          <a href="./media/mv_mosaic_process.png"
+            ><img style="width: 708px" src="./media/mv_mosaic_process.png"
           /></a>
         </figure>
       </div>

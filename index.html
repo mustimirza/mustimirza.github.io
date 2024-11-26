@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CS 180: Project 4</title>
+    <title>CS 180: Project 5</title>
     <style>
       /* cspell:disable-file */
       /* webkit printing magic: print all background colors */
@@ -55,7 +55,7 @@
         font-size: 2.5rem;
         font-weight: 700;
         margin-top: 0;
-        margin-bottom: 0.25em;
+        margin-bottom: 0.75em;
       }
 
       h1 {
@@ -86,16 +86,8 @@
       }
 
       figure {
-        margin: 0.5em 0;
+        margin: 1.25em 0;
         page-break-inside: avoid;
-      }
-
-      p + figure {
-        margin-top: 0.25em;
-      }
-
-      figure + p {
-        margin-top: 0.25em;
       }
 
       figcaption {
@@ -124,21 +116,6 @@
 
       img {
         max-width: 100%;
-        margin-bottom: 0;
-      }
-
-      figure {
-        margin: 0.5em 0;
-        page-break-inside: avoid;
-      }
-
-      p {
-        margin: 0.5em 0;
-      }
-
-      p + figure,
-      figure + p {
-        margin-top: 0.25em;
       }
 
       @media only print {
@@ -161,18 +138,8 @@
         justify-content: space-between;
       }
 
-      .column-list figure {
-        margin: 0;
-      }
-
-      .column-list img {
-        max-width: 100%;
-        height: auto;
-      }
-
       .column {
-        flex: 1;
-        max-width: 100%;
+        padding: 0 1em;
       }
 
       .column:first-child {
@@ -424,8 +391,8 @@
       }
 
       p {
-        margin-top: 0px;
-        margin-bottom: 0px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
       }
 
       .image {
@@ -820,145 +787,273 @@
     </style>
   </head>
   <body>
-    <article id="125a1f2d-c1d2-800e-b1f7-eae41aa31dc9" class="page sans">
+    <article id="149a1f2d-c1d2-8019-86a9-cc21bfe35cb8" class="page sans">
       <header>
-        <h1 class="page-title">CS 180: Project 4</h1>
+        <h1 class="page-title">CS 180: Project 5</h1>
         <p class="page-description"></p>
       </header>
       <div class="page-body">
-        <p id="125a1f2d-c1d2-80a6-b44b-ff8ee21d119f" class=""></p>
-        <p id="125a1f2d-c1d2-8014-80f9-d1c95d11c985" class="">Task 1:</p>
-        <p id="125a1f2d-c1d2-800c-b7b1-f4eea10e332d" class="">
-          These are some of the images I took
+        <p id="14aa1f2d-c1d2-8089-8ea5-d940f85b790f" class=""></p>
+        <p id="14aa1f2d-c1d2-80c6-91b2-f922ef26a37c" class="">Part 1:</p>
+        <p id="14aa1f2d-c1d2-804c-9df9-eef7d2e1433d" class="">
+          I felt this was really straightforward just following the given
+          instructions.
         </p>
-        <div id="125a1f2d-c1d2-80d1-afde-e4429ae29df7" class="column-list">
-          <div
-            id="125a1f2d-c1d2-80eb-a999-df1c5926e1cf"
-            style="width: 100%"
-            class="column"
-          >
-            <figure id="125a1f2d-c1d2-80c4-8a19-c0d622386745" class="image">
-              <a href="./media/dana_left_scaled.jpg"
-                ><img style="width: 1071px" src="./media/dana_left_scaled.jpg"
-              /></a>
-            </figure>
-          </div>
-          <div
-            id="125a1f2d-c1d2-80f3-a9aa-fd64031daf50"
-            style="width: 100%"
-            class="column"
-          >
-            <figure id="125a1f2d-c1d2-80a8-b464-ca9399a7c02e" class="image">
-              <a href="./media/dana_right_scaled.jpg"
-                ><img style="width: 1071px" src="./media/dana_right_scaled.jpg"
-              /></a>
-            </figure>
-          </div>
-          <div
-            id="125a1f2d-c1d2-80ca-b76a-c411953c1a97"
-            style="width: 100%"
-            class="column"
-          >
-            <figure id="125a1f2d-c1d2-80e0-a5df-fb8b8f86201a" class="image">
-              <a href="./media/mv_store_left_scaled.jpg"
-                ><img
-                  style="width: 1071px"
-                  src="./media/mv_store_left_scaled.jpg"
-              /></a>
-            </figure>
-          </div>
-        </div>
-        <p id="125a1f2d-c1d2-80f8-bd46-c72a71175a85" class="">Task 2:</p>
-        <p id="125a1f2d-c1d2-8017-9820-edfcf840479b" class="">
-          In this project, I implemented several functions to calculate and
-          apply homographies for image warping. The process began with
-          calculating the homography matrix using corresponding point pairs from
-          source and target images. I set up a system of linear equations and
-          solved it using least squares to find the homography parameters. To
-          transform points using the homography, I applied the matrix
-          multiplication and normalized the results. I also created functions to
-          assess the accuracy of the homography by calculating the error between
-          transformed source points and target points. For image warping, I
-          implemented both forward and inverse warping methods. The inverse
-          warping approach proved more effective, as it avoided holes in the
-          output image. This method involved mapping coordinates from the output
-          space back to the input image and using bilinear interpolation to
-          determine pixel values.
-        </p>
-        <p id="125a1f2d-c1d2-804f-b0e2-db87eb39f223" class=""></p>
-        <p id="125a1f2d-c1d2-803a-be23-fda2148c3e7c" class="">Task 3:</p>
-        <p id="125a1f2d-c1d2-80ef-ac80-f293f7b28dae" class="">
-          To rectify the images, I marked key points on the images which are in
-          blue here.
-        </p>
-        <p id="125a1f2d-c1d2-80e7-8114-c1f89f183722" class=""></p>
-        <figure id="125a1f2d-c1d2-80e9-be8e-f8b13ac130fd" class="image">
-          <a href="./media/food_truck_comparison.png"
-            ><img style="width: 708px" src="./media/food_truck_comparison.png"
+        <p id="14aa1f2d-c1d2-8004-9eff-decaf16b78a6" class="">Q1.1:</p>
+        <figure id="14aa1f2d-c1d2-8041-95e0-ec3a4b2cd2c5" class="image">
+          <a href="./media/q1-1.jpg"
+            ><img style="width: 288px" src="./media/q1-1.jpg"
           /></a>
         </figure>
-        <p id="125a1f2d-c1d2-80c7-ad6e-dd7aa56be1ad" class=""></p>
-        <figure id="125a1f2d-c1d2-800b-9556-e6bcea6aed99" class="image">
-          <a href="./media/phone_screen_comparison.png"
+        <p id="14aa1f2d-c1d2-8005-a072-e8a024480c24" class="">Q1.2:</p>
+        <figure id="14aa1f2d-c1d2-8045-b2fd-ca52056ea72e" class="image">
+          <a href="./media/1-2.jpg"
+            ><img style="width: 240px" src="./media/1-2.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-8001-a3b9-c5bab34fed22" class=""></p>
+        <p id="14aa1f2d-c1d2-8026-995f-e9f3538272be" class="">Q1.3:</p>
+        <figure id="14aa1f2d-c1d2-800a-a6d3-c3e256b7b1e7" class="image">
+          <a href="./media/1-3.jpg"
+            ><img style="width: 240px" src="./media/1-3.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80a8-bb94-c290cf9c4c6a" class="">Q1.4:</p>
+        <figure id="14aa1f2d-c1d2-8079-a6e3-fa350f0fa187" class="image">
+          <a href="./media/1-4.jpg"
+            ><img style="width: 2626px" src="./media/1-4.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-8011-9838-f550b712f304" class=""></p>
+        <p id="14aa1f2d-c1d2-802e-8b55-ff3502079da5" class="">Q1.5:</p>
+        <figure id="14aa1f2d-c1d2-8075-b827-c7eb80120837" class="image">
+          <a href="./media/1-5.jpg"
+            ><img style="width: 2722px" src="./media/1-5.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80dd-98ee-c7bd0d9dba6d" class=""></p>
+        <p id="14aa1f2d-c1d2-80dc-a24d-ff527728e902" class="">Q1.6:</p>
+        <figure id="14aa1f2d-c1d2-805a-ba3e-dae0097853b2" class="image">
+          <a href="./media/1-6.jpg"
+            ><img style="width: 2653px" src="./media/1-6.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-8053-ab51-c5794b3e1328" class=""></p>
+        <p id="14aa1f2d-c1d2-80b7-9e17-f30d70e09ece" class="">Q 1.7:</p>
+        <figure id="14aa1f2d-c1d2-80c8-8a6f-eb785d4f39e5" class="image">
+          <a href="./media/1-7campanile.jpg"
+            ><img style="width: 816px" src="./media/1-7campanile.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-80cb-92f4-d29f8a07fb4a" class="image">
+          <a href="./media/1-7mosque.jpg"
+            ><img style="width: 816px" src="./media/1-7mosque.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-808c-b9b0-e9bb4d55d607" class="image">
+          <a href="./media/1-7CP20.jpg"
+            ><img style="width: 816px" src="./media/1-7CP20.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80e7-a736-def8e0e1f755" class=""></p>
+        <p id="14aa1f2d-c1d2-806f-becc-f30fa89dfed0" class="">Q 1.71:</p>
+        <p id="14aa1f2d-c1d2-803d-98e7-de2798fbbcda" class=""></p>
+        <p id="14aa1f2d-c1d2-8016-aa48-dea1d6fd93ac" class="">
+          Web Downloaded Image:
+        </p>
+        <figure id="14aa1f2d-c1d2-8095-aaae-ffc5be81723c" class="image">
+          <a href="./media/Seasons-greetings-Banksy.jpg"
             ><img
-              style="width: 708px"
-              src="./media/phone_screen_comparison.png"
+              style="width: 192px"
+              src="./media/Seasons-greetings-Banksy.jpg"
           /></a>
         </figure>
-        <p id="125a1f2d-c1d2-8047-bb27-c5838220e47c" class=""></p>
-        <p id="125a1f2d-c1d2-80f1-b536-f5be0f878749" class="">
-          Task 4:<br /><br />
+        <figure id="14aa1f2d-c1d2-8041-86e4-e3126cf3f109" class="image">
+          <a href="./media/171-webdownload.jpg"
+            ><img style="width: 3145px" src="./media/171-webdownload.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-801f-bf8e-fef13bf6595c" class=""></p>
+        <p id="14aa1f2d-c1d2-80b9-be72-dedfcaea2754" class="">My drawing:</p>
+        <figure id="14aa1f2d-c1d2-805c-a717-e2d75e025558" class="image">
+          <a href="./media/1-71footydrawing.jpg"
+            ><img style="width: 144px" src="./media/1-71footydrawing.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-80d3-94eb-f71df37dd476" class="image">
+          <a href="./media/171-mydrawing.jpg"
+            ><img style="width: 3168px" src="./media/171-mydrawing.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-80cf-b89e-cdb794f781ca" class="image">
+          <a href="./media/1-71appledraw.jpg"
+            ><img style="width: 288px" src="./media/1-71appledraw.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-80ea-8b9c-d1b01b2b476e" class="image">
+          <a href="./media/1-71-apple.jpg"
+            ><img style="width: 3106px" src="./media/1-71-apple.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-805c-b7bb-dc4a10b2bcf0" class=""></p>
+        <p id="14aa1f2d-c1d2-80de-a1ec-d8729d2d7a76" class="">Q 1.72:</p>
+        <figure id="14aa1f2d-c1d2-8049-8c9a-fa2f013b0d2d" class="image">
+          <a href="./media/172-campanile.jpg"
+            ><img style="width: 432px" src="./media/172-campanile.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-807f-b4e3-d20cbd4c8802" class="image">
+          <a href="./media/1722.jpg"
+            ><img style="width: 432px" src="./media/1722.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-80d8-805b-cd3afa77599e" class="image">
+          <a href="./media/1723.jpg"
+            ><img style="width: 432px" src="./media/1723.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80df-9292-fb79f960612f" class=""></p>
+        <p id="14aa1f2d-c1d2-80e1-938e-e13b6731a977" class="">Q1.73:</p>
+        <figure id="14aa1f2d-c1d2-806d-93af-db1cc3730720" class="image">
+          <a href="./media/173-camp.jpg"
+            ><img style="width: 3113px" src="./media/173-camp.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-8028-9134-d0c74397fbf1" class="image">
+          <a href="./media/1732.jpg"
+            ><img style="width: 3133px" src="./media/1732.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-8058-ae25-df93f3573ffd" class="image">
+          <a href="./media/1733.jpg"
+            ><img style="width: 3117px" src="./media/1733.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80a3-9790-ff57806dfd11" class=""></p>
+        <p id="14aa1f2d-c1d2-8048-9d91-cadb67e23103" class="">Q 1.8:</p>
+        <figure id="14aa1f2d-c1d2-80ab-bfae-dd2d147f6742" class="image">
+          <a href="./media/flipped-img.jpg"
+            ><img style="width: 384px" src="./media/flipped-img.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-8031-8c4f-c89a9b539621" class=""></p>
+        <p id="14aa1f2d-c1d2-8066-9321-c0fd56a1accc" class="">Q 1.9:</p>
+        <figure id="14aa1f2d-c1d2-80d1-8075-ef663e2c2888" class="image">
+          <a href="./media/Skeleton-hybrid.jpg"
+            ><img style="width: 192px" src="./media/Skeleton-hybrid.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-8097-b115-e16aeb5f17bb" class="image">
+          <a href="./media/hybrid-snowy.jpg"
+            ><img style="width: 288px" src="./media/hybrid-snowy.jpg"
+          /></a>
+        </figure>
+        <figure id="14aa1f2d-c1d2-8033-9211-cee1d8bddfd8" class="image">
+          <a href="./media/amalfi-coast.jpg"
+            ><img style="width: 288px" src="./media/amalfi-coast.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80a3-aae1-c7326ad2d6d7" class=""></p>
+        <p id="14aa1f2d-c1d2-8018-9d12-c23b36cb8f9e" class="">
+          I honestly learnt a lot playing around with diffusion models and I
+          found the hybrid images incredibly fascinating when I was working with
+          them.
         </p>
-        <p id="125a1f2d-c1d2-80d7-bd4c-f4707b07880c" class="">
-          To create mosaic images, I implemented a multi-step process that
-          combines homography transformation with image blending techniques.
-          First, I resized the input images and adjusted the point coordinates
-          accordingly. Then, I computed the homography matrix using
-          corresponding points from both images and applied an inverse
-          homography to warp one image. I determined the size of the output
-          image based on the dimensions of both the warped and the second image.
-          To seamlessly blend the images, I created a mask and used a pyramid
-          blending technique. This involved constructing Gaussian and Laplacian
-          pyramids for both images and the mask, then blending the images at
-          each level of the pyramid. Finally, I reconstructed the blended image
-          from the pyramid, ensuring smooth transitions between the two original
-          images.
+        <h3 id="14aa1f2d-c1d2-80db-a4e0-f3c4d221e017" class="">Part 2:</h3>
+        <p id="14aa1f2d-c1d2-8090-b835-d0d5ec3b0b7f" class="">
+          The implemented U-Net architecture is designed for image denoising
+          tasks, where it processes noisy images to predict and remove noise
+          components from the original image. The network&#x27;s structure
+          comprises:
         </p>
-        <p id="125a1f2d-c1d2-805a-8548-c0213057a665" class=""></p>
-        <figure id="125a1f2d-c1d2-8031-b0a6-e7ca0ee602b6" class="image">
-          <a href="./media/dana_mosaic_process.png"
-            ><img style="width: 708px" src="./media/dana_mosaic_process.png"
-          /></a>
-        </figure>
-        <figure id="125a1f2d-c1d2-80b0-900e-f1bb7da07f81" class="image">
-          <a href="./media/mv_mosaic_process.png"
-            ><img style="width: 708px" src="./media/mv_mosaic_process.png"
-          /></a>
-        </figure>
-        <figure id="125a1f2d-c1d2-80b0-900e-f1bb7da07f81" class="image">
-          <a href="./media/cal_train_mosaic.png"
-            ><img style="width: 708px" src="./media/cal_train_mosaic.png"
-          /></a>
-        </figure>
-        <p id="125a1f2d-c1d2-80d7-bd4c-f4707b07880c" class="">
-          This is project 4b.
+        <ul id="14aa1f2d-c1d2-807e-a1d3-f70e1c1681c7" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Downsampling blocks that capture global context
+          </li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-8064-8c32-e2f3398c634b" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Upsampling blocks that restore spatial details
+          </li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-809e-9656-d9880383a89c" class="bulleted-list">
+          <li style="list-style-type: disc">
+            Skip connections that preserve fine-grained information This
+            architectural design makes U-Net particularly effective for
+            image-to-image transformation tasks, including denoising.
+          </li>
+        </ul>
+        <p id="14aa1f2d-c1d2-80d5-88e5-fde5b2f60463" class=""></p>
+        <p id="14aa1f2d-c1d2-8017-9feb-ea454a27e22a" class="">
+          Below we can visualize the effects of sigma = 0.5 when we add noise to
+          the image.
         </p>
-        <p id="125a1f2d-c1d2-805a-8548-c0213057a665" class=""></p>
-        <figure id="125a1f2d-c1d2-8031-b0a6-e7ca0ee602b6" class="image">
-          <a href="./media/dana_harris_corners.png"
-            ><img style="width: 708px" src="./media/dana_harris_corners.png"
+        <figure id="14aa1f2d-c1d2-804b-9bf8-f5e317322e85" class="image">
+          <a href="./media/1-sigmas.jpg"
+            ><img style="width: 192px" src="./media/1-sigmas.jpg"
           /></a>
         </figure>
-        <figure id="125a1f2d-c1d2-8031-b0a6-e7ca0ee602b6" class="image">
-          <a href="./media/selected_corners.png"
-            ><img style="width: 708px" src="./media/selected_corners.png"
+        <p id="14aa1f2d-c1d2-80bc-a7ea-eec08f45ee62" class=""></p>
+        <p id="14aa1f2d-c1d2-80f5-9666-dda80ef19399" class="">
+          The MNIST dataset was used for training with the following
+          hyperparameters:
+        </p>
+        <ul id="14aa1f2d-c1d2-80b9-9abd-fa1aa7389b9d" class="bulleted-list">
+          <li style="list-style-type: disc">Batch size: 256</li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-8003-8809-de5f60d43829" class="bulleted-list">
+          <li style="list-style-type: disc">Number of epochs: 5</li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-805e-aeb0-eeb73b6d0919" class="bulleted-list">
+          <li style="list-style-type: disc">Noise level (σ): 0.5</li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-80bb-ae4e-dc2fac41a20f" class="bulleted-list">
+          <li style="list-style-type: disc">Optimizer: Adam</li>
+        </ul>
+        <ul id="14aa1f2d-c1d2-805e-9356-dda85b10c366" class="bulleted-list">
+          <li style="list-style-type: disc">Learning rate: 0.0001</li>
+        </ul>
+        <figure id="14aa1f2d-c1d2-80f1-89b0-f099b5619d41" class="image">
+          <a href="./media/1-trainloss.jpg"
+            ><img style="width: 192px" src="./media/1-trainloss.jpg"
           /></a>
         </figure>
-        <figure id="125a1f2d-c1d2-8031-b0a6-e7ca0ee602b6" class="image">
-          <a href="./media/features_dana.png"
-            ><img style="width: 708px" src="./media/features_dana.png"
+        <figure id="14aa1f2d-c1d2-80b4-825d-f2bbb4d4da98" class="image">
+          <a href="./media/1-tlperiter.jpg"
+            ><img style="width: 192px" src="./media/1-tlperiter.jpg"
           /></a>
         </figure>
+        <p id="14aa1f2d-c1d2-80cf-b5c0-ee3429abd49e" class=""></p>
+        <p id="14aa1f2d-c1d2-8071-848e-c156097d87b0" class="">
+          Here we can see the differences between loss values at epoch level 1
+          vs epoch 5.
+        </p>
+        <figure id="14aa1f2d-c1d2-80d3-9dc1-cf6649709b4f" class="image">
+          <a href="./media/1-it1.jpg"
+            ><img style="width: 192px" src="./media/1-it1.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-808f-8af3-cd638dcbe12c" class=""></p>
+        <figure id="14aa1f2d-c1d2-80d8-bb6e-f5b459aac923" class="image">
+          <a href="./media/1-it5.jpg"
+            ><img style="width: 192px" src="./media/1-it5.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-804b-a7a1-fd47d263aec7" class=""></p>
+        <p id="14aa1f2d-c1d2-8014-ad32-cf93cc4eb083" class="">
+          This image represents performance with different sigma values.
+        </p>
+        <p id="14aa1f2d-c1d2-8097-a99c-e587f4947486" class=""></p>
+        <figure id="14aa1f2d-c1d2-8069-a961-fe695c414e8b" class="image">
+          <a href="./media/1-with-sigma.jpg"
+            ><img style="width: 708px" src="./media/1-with-sigma.jpg"
+          /></a>
+        </figure>
+        <p id="14aa1f2d-c1d2-80b5-bcd4-f107580bbb8b" class="">
+          <br />I wasn’t able to finish but honestly, I found that opportunity
+          of implementing an actual diffusion model and research paper to be one
+          of the more interesting things I’ve done in my time at college. <br />
+        </p>
       </div>
     </article>
     <span class="sans" style="font-size: 14px; padding-top: 2em"></span>
